@@ -1,17 +1,14 @@
 package monitor
 
 import (
-	"context"
 	"net/http"
-	"sync"
+	"log"
 )
 
 type MonitorController struct {
 	Address string
 	Monitor *WorkerMonitor
-
-	mux   *http.ServeMux
-	mutex sync.Mutex
+	mux *http.ServeMux
 }
 
 func NewMonitorController(address string, monitor *WorkerMonitor) *MonitorController {
@@ -35,7 +32,6 @@ func (c *MonitorController) AddRoutes() {
 
 	c.mux.HandleFunc("/restart", func(writer http.ResponseWriter, request *http.Request) {
 		log.Infof("hey restart")
-
-		})
-
+		// Include restart logic here if needed
+	})
 }
