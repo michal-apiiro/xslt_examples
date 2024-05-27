@@ -1,5 +1,5 @@
 from flask import Flask, request
-from flask_restful import Resource, Api, reqparse
+from flask_restful import Resource, Api, req
 
 app = Flask(__name__)
 api = Api(app)
